@@ -35,12 +35,12 @@ const AuthProvider = ({ children }) => {
             setLoading(false)
             // get access token 
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedUserEmail, { withCredentials: true })
+                axios.post('https://car-doctor-server-phi-eight.vercel.app/jwt', loggedUserEmail, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                     })
             } else {
-                axios.post('http://localhost:5000/logout', loggedUserEmail, {
+                axios.post('https://car-doctor-server-phi-eight.vercel.app/logout', loggedUserEmail, {
                     withCredentials: true
                 })
                     .then(res => {
